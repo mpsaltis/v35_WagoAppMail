@@ -7,7 +7,7 @@ VAR
     xBusy               : BOOL;
     sServer             : STRING := 'smtp.gmail.com';
     wPort               : WORD   := 587;
-    sUser               : WagoAppMail.WagoAppString.MaxString := 'wagomike@gmail.com';
+    sUser               : WagoAppMail.WagoAppString.MaxString := 'wagomie@gmail.com';
     sPwd                : WagoAppMail.WagoAppString.MaxString := 'nicetry'; (*Use Gmail App Password - See WAGO Open Source Comm.*)
     eAuthentication     : WagoAppMail.eAuthentication := WagoAppMail.eAuthentication.eLOGIN;
     eEncryption         : WagoAppMail.eEncryption := WagoAppMail.eEncryption.eSTARTTLS;
