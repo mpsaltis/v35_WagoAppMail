@@ -1,0 +1,44 @@
+PROGRAM SmtpSendMail
+VAR
+	fbEmail : FbSmtpSendMail;
+	xTrigger: BOOL;
+	xBusy: BOOL;
+	xError: BOOL;
+	oStatus: WagoAppMail.WagoSysErrorBase.FbResult;
+	sServer: STRING := 'smtp.gmail.com';
+	wPort: WORD := 587;
+	sUser: WagoAppMail.WagoAppString.MaxString := 'wagotest@gmail.com';
+	sPassword: WagoAppMail.WagoAppString.MaxString := 'nicetry'; (*Use Gmail App Password - See WAGO Open Source Comm.*)
+	eAuthentication : WagoAppMail.eAuthentication := WagoAppMail.eAuthentication.eLOGIN;
+	eEncryption : WagoAppMail.eEncryption := WagoAppMail.eEncryption.eSTARTTLS; (*Encriptacion TLS*)
+	typSSL_Options: WagoAppMail.WagoTypesCurl.typSSL_Options;
+	tTimeout: TIME;
+	sFrom: WagoAppMail.WagoAppString.MaxString;
+	sTo: WagoAppMail.WagoAppString.MaxString := 'michael.bill@wago.com';
+	sCC: WagoAppMail.WagoAppString.MaxString;
+	sBcc: WagoAppMail.WagoAppString.MaxString;
+	sSubject: WagoAppMail.WagoAppString.MaxString := 'This is just a test';
+	sMessage: WagoAppMail.WagoAppString.MaxString := 'This is my message';
+END_VAR
+
+/////
+
+fbEmail(
+	xTrigger:= xTrigger, 
+	xBusy=> xBusy, 
+	xError=> xError, 
+	oStatus=> oStatus, 
+	sServer:= sServer, 
+	wPort:= wPort, 
+	sUser:= sUser, 
+	sPassword:= sPassword, 
+	eAuthentication:= eAuthentication, 
+	eEncryption:= eEncryption, 
+	typSSL_Options:= typSSL_Options, 
+	tTimeout:= tTimeout, 
+	sFrom:= sFrom, 
+	sTo:= sTo, 
+	sCc:= sCC, 
+	sBcc:= sBcc, 
+	sSubject:= sSubject, 
+	sMessage:= sMessage);
