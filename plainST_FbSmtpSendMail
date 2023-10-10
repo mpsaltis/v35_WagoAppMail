@@ -1,4 +1,4 @@
-PROGRAM PLC_PRG
+PROGRAM SmtpSendMail
 VAR
 	fbEmail : FbSmtpSendMail;
 	xTrigger: BOOL;
@@ -7,14 +7,14 @@ VAR
 	oStatus: WagoAppMail.WagoSysErrorBase.FbResult;
 	sServer: STRING := 'smtp.gmail.com';
 	wPort: WORD := 587;
-	sUser: WagoAppMail.WagoAppString.MaxString := 'wagomike@gmail.com';
+	sUser: WagoAppMail.WagoAppString.MaxString := 'wagotest@gmail.com';
 	sPassword: WagoAppMail.WagoAppString.MaxString := 'nicetry'; (*Use Gmail App Password - See WAGO Open Source Comm.*)
 	eAuthentication : WagoAppMail.eAuthentication := WagoAppMail.eAuthentication.eLOGIN;
 	eEncryption : WagoAppMail.eEncryption := WagoAppMail.eEncryption.eSTARTTLS; (*Encriptacion TLS*)
 	typSSL_Options: WagoAppMail.WagoTypesCurl.typSSL_Options;
 	tTimeout: TIME;
 	sFrom: WagoAppMail.WagoAppString.MaxString;
-	sTo: WagoAppMail.WagoAppString.MaxString := 'michael.psaltis@wago.com';
+	sTo: WagoAppMail.WagoAppString.MaxString := 'michael.bill@wago.com';
 	sCC: WagoAppMail.WagoAppString.MaxString;
 	sBcc: WagoAppMail.WagoAppString.MaxString;
 	sSubject: WagoAppMail.WagoAppString.MaxString := 'This is just a test';
